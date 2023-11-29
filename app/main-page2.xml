@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" loaded="onPageLoaded">
+    <ActionBar title="My App" icon="" />
+    <StackLayout class="p-20">
+        <Label text="This is the label text where displays in nativescrpt app" textWrap="true" />
+    </StackLayout>
+</Page>

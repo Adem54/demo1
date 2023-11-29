@@ -33,6 +33,7 @@ export class HelloWorldModel extends Observable {
       this.message = 'Hoorraaay! You unlocked the NativeScript clicker achievement!'
     } else {
       this.message = `${this._counter} taps left`
+      console.log(this._counter);
     }
   }
 }
