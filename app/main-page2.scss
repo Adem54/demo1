@@ -11,6 +11,8 @@ font-family:"American Typewriter"
 Biz ornegin ios da var olan ama android de var olmayan bir specific bir font-family kullanirsak, o zaman Android default font-family si olan sans-serif i kullanacaktir
 */
 
+$label-color : yellow;
+
 Page{
 	background-color: lightblue;
 	color:white;
@@ -27,7 +29,7 @@ StackLayout
 font-size: 18px;
 font-family: sans-serif;
 font-family: monospace;
-color:tomato;
+color:$label-color;
 font-weight: bold;
 }
 

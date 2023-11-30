@@ -6,6 +6,7 @@
   "dependencies": {
     "@nativescript/core": "~8.5.0",
     "@nativescript/theme": "~3.0.2",
+    "nativescript-sass": "^0.1.1",
     "tns-platform-declarations": "^6.5.15"
   },
   "devDependencies": {

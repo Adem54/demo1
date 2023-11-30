@@ -1,16 +1,15 @@
-import {  AndroidApplication, Application, ApplicationCommon, EventData, Frame, Http, Page, platformNames } from '@nativescript/core'
-import { Android } from '@nativescript/core/file-system';
+import { Application, EventData, Frame, Http, Page, platformNames } from '@nativescript/core'
 
 //  import * as app from '@nativescript/core/application';
 
 export function navigatingTo(args: EventData) {
   const page = <Page>args.object
 
-  UIAlertView.appearanceForTraitCollectionWhenContainedInInstancesOfClasses
+  // UIAlertView.appearanceForTraitCollectionWhenContainedInInstancesOfClasses
   
 }
 
-declare var UIBarStyle;
+// declare var UIBarStyle;
 
 export function onPageLoaded(args:EventData)
 {
@@ -33,9 +32,9 @@ export function onPageLoaded(args:EventData)
   {
     //starting point olan app i kullanacagiz
     // const window =   app.Application.AndroidApplication.startActivity.getWindow();
-    const window2 =   Application.AndroidApplication.startActivity.getWindow();
-    const decorView = window2.getDecorView();
-     decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    // const window2 =   Application.AndroidApplication.startActivity.getWindow();
+    // const decorView = window2.getDecorView();
+    //  decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     // Application.setAutoSystemAppearanceChanged(true);
     //Bu depreceated olmus, bunu nasil..son veriyone gore yapariz buna bakalim...ONEMLI!!!!
     
@@ -44,8 +43,8 @@ export function onPageLoaded(args:EventData)
     const androidFrame = Frame.topmost().android;
     //androidFrame.getActivity().getWindow().setStatusBarColor(android.graphics.Color.parseColor("#FF0000")); // Change the color to your desired color
    // Application.getNativeApplication().getActivity().getWindow().setStatusBarColor(android.graphics.Color.parseColor("#FF0000"));
-    Application.getNativeApplication().startActivity().getDecorView().setStatusBarColor(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
-    let app = Application.getNativeApplication().startActivity().getDecorView().setAutoSystemAppearanceChanged(true);
+    // Application.getNativeApplication().startActivity().getDecorView().setStatusBarColor(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+    // let app = Application.getNativeApplication().startActivity().getDecorView().setAutoSystemAppearanceChanged(true);
 
  
   }

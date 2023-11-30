@@ -1,0 +1,19 @@
+
+$mycustombtn:cyan;
+$mycustombtncolor:tomato;
+$mycustombtnpadding:10%;
+
+.nixus-mybutton-wrapper {
+	border-width: 10;
+	border-color:pink;
+
+	.mycustombtn {
+		background-color: $mycustombtn;
+		color:$mycustombtncolor;
+		padding:$mycustombtnpadding;
+	}
+
+}
+
+
+
