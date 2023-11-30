@@ -1,8 +1,12 @@
-import { EventData, Page, platformNames } from '@nativescript/core'
-import { topmost } from '@nativescript/core/ui/frame/frame-common';
+import {  AndroidApplication, Application, ApplicationCommon, EventData, Frame, Http, Page, platformNames } from '@nativescript/core'
+import { Android } from '@nativescript/core/file-system';
+
+//  import * as app from '@nativescript/core/application';
 
 export function navigatingTo(args: EventData) {
   const page = <Page>args.object
+
+  UIAlertView.appearanceForTraitCollectionWhenContainedInInstancesOfClasses
   
 }
 
@@ -25,6 +29,25 @@ export function onPageLoaded(args:EventData)
     //Eger ActionBar i gizlememis isek veya kaldirmamis isek.... bu gecerlidir....Ama ActionBar olmazsa ne yapacagiz....
     //ActionBar i kaldirinca ios da tekrardan, statusbar color:black olarak geliyor
   
+  }else if(platformNames.android)
+  {
+    //starting point olan app i kullanacagiz
+    // const window =   app.Application.AndroidApplication.startActivity.getWindow();
+    const window2 =   Application.AndroidApplication.startActivity.getWindow();
+    const decorView = window2.getDecorView();
+     decorView.setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    // Application.setAutoSystemAppearanceChanged(true);
+    //Bu depreceated olmus, bunu nasil..son veriyone gore yapariz buna bakalim...ONEMLI!!!!
+    
+    //colors.xml -   <color name="ns_primaryDark">#fefefe</color> ligth backgroudn ayarlariz...
+
+    const androidFrame = Frame.topmost().android;
+    //androidFrame.getActivity().getWindow().setStatusBarColor(android.graphics.Color.parseColor("#FF0000")); // Change the color to your desired color
+   // Application.getNativeApplication().getActivity().getWindow().setStatusBarColor(android.graphics.Color.parseColor("#FF0000"));
+    Application.getNativeApplication().startActivity().getDecorView().setStatusBarColor(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+    let app = Application.getNativeApplication().startActivity().getDecorView().setAutoSystemAppearanceChanged(true);
+
+ 
   }
 }
 

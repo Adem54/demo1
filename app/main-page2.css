@@ -1,12 +1,4 @@
-StackLayout
-{
- 
-font-size: 18px;
-font-family: sans-serif;
-font-family: monospace;
-color:black;
-font-weight: bold;
-}
+
 /*
 Android default olarak tam siyah renkli bir font gelmiyor
 Biraz daha gri renkli bir text geliyor
@@ -28,3 +20,51 @@ ActionBar {
 	background-color: darkblue;
 	color: white;
 }
+
+StackLayout
+{
+ 
+font-size: 18px;
+font-family: sans-serif;
+font-family: monospace;
+color:tomato;
+font-weight: bold;
+}
+
+/*
+Android icin ise StatusBar 
+Once dark blue rengi hex color olarak karsilik geldigi value yi buluruz
+
+App_Resources/Android/src/res/values/colors.xml
+Burdaki ns_primaryDark rengi StatusBar imizin arka planini belirleyen colordir ve burdan geliyor
+Simdi biz Android StatusBar in default olarak gelirken darkblue gelmesini istersek, burda darkbluenin karsilik geldigi hexcolor values ini #00008b yi deger olarak vermek zorundayiz..burda hex color kullaniliyor
+
+
+
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <!-- The default color of the ActionBar -->
+    <color name="ns_primary">#F5F5F5</color>
+	
+    <!-- (API21+) The color of the status bar and contextual app bars; this is normally a dark version of colorPrimary. -->
+    <color name="ns_primaryDark">#757575</color>
+
+    <!-- The color of UI controls such as check boxes, radio buttons, and edit text boxes. -->
+	<color name="ns_accent">#65ADF1</color>
+
+    <!-- this is unused in the default themes, so we might want to remove it? -->
+    <!-- <color name="ns_blue">#272734</color> -->
+</resources>
+
+
+<color name="ns_primaryDark">#757575</color> bunu asagidaki ile degistiriyoruz
+ <color name="ns_primaryDark">#00008b</color>
+
+ Bu degisikligi yapip sonra da manuel olarak, tekrar compile-build ederiz nativescript cli ile uygulamamizi
+
+HARIKA STATUSBAR IN ARKA PLANINI DEGISTIRMEYI BASARABILDIK!!!!SUPER.....
+
+ BESTPRACTISE...COKK DIKKAT EDELIM..PLATFORMSEPECFIC OLAN VE BIZIM DEGISTIRMEKTE COK ZORLANDIGMZ BAZI YERLERI DEMEKKI BIZ GELIP APP_RESOURCES ALTINDAKI DOSYALARI BIRAZ KURCALAYRAK BULABILIRIZ!!!!!
+
+ Peki biz statusbar i darkblue ya gore ayarladik ki zaten statusbar in kendi default color i da white oldugu icin sorun yasamadik ama peki biz nativescript uygulamamizda, background u ligth color yapsa idik o zaman nasil StatusBar un color rengi white nasil StausBar i buna ayak uyduracagiz...SIMDI ONA BAKALIM
+*/
